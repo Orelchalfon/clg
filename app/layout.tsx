@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/scroll-to-top";
 import { DirectionProvider } from "@/components/ui/direction";
 import { getBaseUrl } from "@/lib/seo";
 import { cn } from "@/lib/utils";
@@ -86,6 +87,7 @@ export default function RootLayout({
     <html
       lang='he'
       dir='rtl'
+      suppressHydrationWarning
       className={cn(
         "h-full bg-background antialiased",
         geistSans.variable,
@@ -94,7 +96,7 @@ export default function RootLayout({
       )}>
       <body className='flex min-h-full flex-col bg-background text-foreground'>
         <DirectionProvider direction='rtl' dir='rtl'>
-          {children}
+          <ScrollToTop>{children}</ScrollToTop>
         </DirectionProvider>
       </body>
     </html>

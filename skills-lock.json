@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "performance-expert": {
+      "source": "shipshitdev/library",
+      "sourceType": "github",
+      "computedHash": "5dadfc3c33c6442e4a53202687a10b379121de5f4ce58f047220f5f165ce770e"
+    },
     "shadcn": {
       "source": "shadcn/ui",
       "sourceType": "github",

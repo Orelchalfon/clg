@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import type { Lead } from "@/types/lead";
@@ -93,7 +93,7 @@ function clampWidth(width: number, minWidth: number) {
   return Math.max(minWidth, width);
 }
 
-export function LeadsTable({ leads }: { leads: Lead[] }) {
+function LeadsTableComponent({ leads }: { leads: Lead[] }) {
   const [columnWidths, setColumnWidths] =
     useState<Record<ColumnKey, number>>(defaultWidths);
   const [activeResize, setActiveResize] = useState<ActiveResize | null>(null);
@@ -271,3 +271,5 @@ export function LeadsTable({ leads }: { leads: Lead[] }) {
     </div>
   );
 }
+
+export const LeadsTable = memo(LeadsTableComponent);
