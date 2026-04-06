@@ -7,6 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --animate-aurora: aurora 60s linear infinite;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-geist-sans);
@@ -50,9 +51,14 @@
 
 :root {
   --background: oklch(1 0 0);
+  --black: #000;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
+  --indigo-300: #a5b4fc;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
   --primary: oklch(0.511 0.096 186.391);
@@ -81,6 +87,9 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --transparent: transparent;
+  --violet-200: #ddd6fe;
+  --white: #fff;
 }
 
 .dark {
@@ -117,12 +126,27 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+@keyframes aurora {
+  from {
+    background-position:
+      50% 50%,
+      50% 50%;
+  }
+
+  to {
+    background-position:
+      350% 50%,
+      350% 50%;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   html {
-    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+    @apply bg-background text-foreground scroll-smooth;
   }
   body {
     @apply bg-background text-foreground font-sans;
