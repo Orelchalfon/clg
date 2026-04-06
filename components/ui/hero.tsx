@@ -32,7 +32,10 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden rounded-[calc(var(--radius)*2.4)] border border-border/70 bg-card/95 shadow-sm">
+    <section
+      aria-labelledby="hero-title"
+      className="relative overflow-hidden rounded-[calc(var(--radius)*2.4)] border border-border/70 bg-card/95 shadow-sm"
+    >
       <canvas
         id="canvas"
         aria-hidden="true"
@@ -51,14 +54,18 @@ export function Hero() {
           </div>
 
           <div className="space-y-4">
-            <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            <h1
+              id="hero-title"
+              className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            >
               מאתרים לידים רלוונטיים
               <span className="block text-primary">בלי לאבד זמן על עבודה ידנית</span>
             </h1>
 
             <p className="max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
-              פלטפורמה בעברית מלאה שמרכזת חיפוש עסקים, מציגה תוצאות בצורה מסודרת,
-              ועוזרת לכם להגיע מהר יותר לרשימת לידים שאפשר להתחיל לעבוד איתה.
+              מערכת לידים בעברית מלאה שמרכזת חיפוש עסקים, מציגה תוצאות בצורה
+              מסודרת, ועוזרת לכם להגיע מהר יותר לרשימת לידים שאפשר להתחיל לעבוד
+              איתה.
             </p>
           </div>
 
@@ -96,11 +103,17 @@ export function Hero() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="rounded-[calc(var(--radius)*1.8)] border border-border/70 bg-background/85 p-5 shadow-xs backdrop-blur">
-            <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+          <section
+            aria-labelledby="hero-benefits-title"
+            className="rounded-[calc(var(--radius)*1.8)] border border-border/70 bg-background/85 p-5 shadow-xs backdrop-blur"
+          >
+            <h2
+              id="hero-benefits-title"
+              className="flex items-center gap-2 text-sm font-medium text-foreground"
+            >
               <BadgeCheck className="size-4 text-primary" />
               למה זה עובד טוב לצוותים בעברית
-            </div>
+            </h2>
 
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               {trustPoints.map((point) => (
@@ -110,16 +123,20 @@ export function Hero() {
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
 
-          <div
+          <section
             id="results-preview"
+            aria-labelledby="results-preview-title"
             className="rounded-[calc(var(--radius)*1.8)] border border-border/70 bg-background/85 p-5 shadow-xs backdrop-blur"
           >
-            <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+            <h2
+              id="results-preview-title"
+              className="flex items-center gap-2 text-sm font-medium text-foreground"
+            >
               <MousePointerClick className="size-4 text-primary" />
               תהליך עבודה קצר וברור
-            </div>
+            </h2>
 
             <div className="mt-4 grid gap-3">
               {[
@@ -138,7 +155,7 @@ export function Hero() {
                 </div>
               ))}
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </section>

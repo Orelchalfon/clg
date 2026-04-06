@@ -1,4 +1,5 @@
 import { DirectionProvider } from "@/components/ui/direction";
+import { getBaseUrl } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
@@ -20,12 +21,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CLG - מערכת לידים חכמה בעברית",
+  metadataBase: getBaseUrl(),
+  title: {
+    default: "CLG | מערכת לידים חכמה בעברית",
+    template: "%s | CLG",
+  },
   description:
-    "מערכת לידים חכמה בעברית שמרכזת חיפוש עסקים, מציגה תוצאות מסודרות, ועוזרת לכם להגיע מהר יותר לרשימת לידים שאפשר להתחיל לעבוד איתה.",
+    "מערכת לידים חכמה בעברית לאיתור עסקים ולחיפוש לידים רלוונטיים. מחפשים עסקים, מציגים תוצאות מסודרות, ומתחילים לעבוד מהר יותר עם רשימת לידים מוכנה לפעולה.",
   keywords: [
     "מערכת לידים",
+    "חיפוש לידים",
     "חיפוש עסקים",
+    "איתור עסקים",
     "לידים רלוונטיים",
     "פלטפורמה בעברית",
     "ניהול לידים",
@@ -35,6 +42,39 @@ export const metadata: Metadata = {
     "תוצאות מסודרות ללידים",
     "לידים מוכנים לפעולה",
   ],
+  alternates: {
+    canonical: "/",
+    languages: {
+      he: "/",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "he_IL",
+    url: "/",
+    siteName: "CLG",
+    title: "CLG | מערכת לידים חכמה בעברית",
+    description:
+      "מערכת לידים חכמה בעברית לאיתור עסקים, חיפוש לידים ותצוגת תוצאות מסודרת שמוכנה לעבודה.",
+  },
+  twitter: {
+    card: "summary",
+    title: "CLG | מערכת לידים חכמה בעברית",
+    description:
+      "מערכת לידים חכמה בעברית לאיתור עסקים, חיפוש לידים ותצוגת תוצאות מסודרת שמוכנה לעבודה.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  category: "business",
 };
 
 export default function RootLayout({
