@@ -1,9 +1,10 @@
+import { DirectionProvider } from "@/components/ui/direction";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
-const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,10 +28,20 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-mono", jetbrainsMono.variable)}
+      lang="he"
+      dir="rtl"
+      className={cn(
+        "h-full bg-background antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        jetbrainsMono.variable
+      )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col bg-background text-foreground">
+        <DirectionProvider direction="rtl" dir="rtl">
+          {children}
+        </DirectionProvider>
+      </body>
     </html>
   );
 }
