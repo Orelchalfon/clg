@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "computedHash": "77faba608ea949351d1757e29e6cb726f6ec5937f7595be0593038a7d2d76bb9"
+    },
+    "skill-webdesign": {
+      "source": "raro123/fund-investigator",
+      "sourceType": "github",
+      "computedHash": "8154ca2a5ca0c63342951fdd8abb2b080cda6fb334e8c2053d438126e790429d"
+    }
+  }
+}
