@@ -418,12 +418,12 @@ export function HomePageClient() {
             aria-label='טעינת תוצאות לידים'
             className='rounded-[calc(var(--radius)*2)] border border-border/70 bg-card/95 px-6 py-8 shadow-sm'>
             <div className='flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between'>
-              <div className='flex items-center gap-4'>
+              <div className='flex flex-col items-center gap-4 sm:flex-row sm:items-center'>
                 <MorphingSquare
                   message='מבצע חיפוש ומביא נתונים...'
                   className='size-11'
                 />
-                <div className='space-y-1'>
+                <div className='space-y-1 text-center sm:text-start'>
                   <p className='text-sm font-medium text-foreground'>
                     {progressMessage}
                   </p>

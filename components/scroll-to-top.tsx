@@ -11,9 +11,8 @@ export default function ScrollToTop({
   const router = useRouter();
 
   useEffect(() => {
-    if (window.location.hash) {
-      router.replace("/");
-    }
+    if (window.location.href === window.location.origin + "/") return;
+    router.replace("/");
   }, []);
 
   return <>{children}</>;

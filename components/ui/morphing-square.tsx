@@ -40,7 +40,7 @@ export function MorphingSquare({
     <div className={cn(morphingSquareVariants({ messagePlacement }))}>
       <motion.div
         className={cn(
-          "size-10 shrink-0 rounded-[6%] bg-linear-to-br from-primary via-[color:color-mix(in_oklab,var(--color-primary)_70%,white)] to-[color:color-mix(in_oklab,var(--color-primary)_78%,black)] shadow-[0_12px_30px_-12px_color-mix(in_oklab,var(--color-primary)_45%,transparent)]",
+          "size-10 shrink-0 rounded-[6%] bg-linear-to-br from-primary via-[color-mix(in_oklab,var(--color-primary)_70%,white)] to-[color:color-mix(in_oklab,var(--color-primary)_78%,black)] shadow-[0_12px_30px_-12px_color-mix(in_oklab,var(--color-primary)_45%,transparent)]",
           className
         )}
         animate={
