@@ -5,7 +5,8 @@ import { memo, useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { Lead } from "@/types/lead";
 
-type ColumnKey = keyof Lead;
+type LeadTableRow = Omit<Lead, "id">;
+type ColumnKey = keyof LeadTableRow;
 
 type LeadColumn = {
   key: ColumnKey;
@@ -15,7 +16,7 @@ type LeadColumn = {
   cellClassName?: string;
   headerClassName?: string;
   isResizable?: boolean;
-  render?: (lead: Lead) => string;
+  render?: (lead: LeadTableRow) => string;
 };
 
 type ActiveResize = {
@@ -27,14 +28,6 @@ type ActiveResize = {
 const MIN_COLUMN_STEP = 16;
 
 const columns: LeadColumn[] = [
-  {
-    key: "id",
-    label: "מזהה",
-    defaultWidth: 150,
-    minWidth: 120,
-    cellClassName: "font-mono text-xs tracking-tight text-muted-foreground",
-    headerClassName: "font-mono text-xs tracking-[0.2em]",
-  },
   {
     key: "businessType",
     label: "סוג עסק",
